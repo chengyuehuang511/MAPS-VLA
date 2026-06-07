@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maps-vla"
+version = "1.0.0"
+description = "MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better VLA Generalization (CVPR 2026)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Chengyue Huang",    email = "chengyueh@adobe.com"},
+    {name = "Mellon M. Zhang"},
+    {name = "Robert Azarcon"},
+    {name = "Glen Chou"},
+    {name = "Zsolt Kira"},
+]
+keywords = [
+    "vision-language-action models",
+    "robust fine-tuning",
+    "module-wise proximity scheduling",
+    "robotic learning",
+    "CVPR 2026",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "accelerate>=0.25.0",
+    "draccus==0.8.0",
+    "einops",
+    "huggingface_hub",
+    "json-numpy",
+    "jsonlines",
+    "matplotlib",
+    "peft==0.11.1",
+    "protobuf",
+    "rich",
+    "sentencepiece==0.1.99",
+    "timm==0.9.10",
+    "tokenizers==0.19.1",
+    "torch==2.2.0",
+    "torchvision==0.17.0",
+    "torchaudio==2.2.0",
+    "transformers @ git+https://github.com/moojink/transformers-openvla-oft.git",
+    "wandb",
+    "tensorflow==2.15.0",
+    "tensorflow_datasets==4.9.3",
+    "tensorflow_graphics==2021.12.3",
+    "dlimp @ git+https://github.com/moojink/dlimp_openvla",
+    "imageio",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.2.0",
+    "gpustat",
+    "ipython",
+    "pre-commit",
+    "ruff>=0.2.2",
+]
+
+[project.urls]
+homepage    = "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_MAPS_Preserving_Vision-Language_Representations_via_Module-Wise_Proximity_Scheduling_for_Better_CVPR_2026_paper.html"
+repository  = "https://github.com/chengyuehuang511/MAPS-VLA"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+exclude = ["cache", "outputs", "runs", "data", "wandb"]
+
+[tool.setuptools.package-data]
+"prismatic" = ["py.typed"]
+
+[tool.black]
+line-length    = 121
+target-version = ["py310"]
+preview        = true
+
+[tool.ruff]
+line-length    = 121
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["A", "B", "E", "F", "I", "RUF", "W"]
+ignore = ["F722"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]

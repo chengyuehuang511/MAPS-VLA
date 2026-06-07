@@ -1,0 +1,64 @@
+# Secrets
+secrets.env
+.env
+.hf_token
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.so
+
+# Checkpoints & outputs
+outputs/
+output/
+output_flash6/
+runs/
+rollouts/
+results/
+eval_logs/
+evaluation_results/
+pretrained_models/prism*
+pretrained_models/prism*/
+pretrained_models/*.bin
+pretrained_models/*.safetensors
+
+# Data
+data
+data/
+datasets/
+
+# Logs
+wandb/
+experiments/logs/
+*.log
+
+# Media
+*.mp4
+*.avi
+# Output PNGs (ignored)
+*.png
+!figure/*.png
+*.jpg
+*.gif
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Paper source
+paper/
+*.back.*
+
+# Backup files
+*.back.*

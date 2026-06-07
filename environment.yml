@@ -1,0 +1,65 @@
+name: maps-vla
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  - pip:
+    # Core deep learning
+    - torch==2.2.0
+    - torchvision==0.17.0
+    - torchaudio==2.2.0
+    - triton==2.2.0
+
+    # Flash Attention (install AFTER editable install — requires CUDA build)
+    # pip install flash-attn==2.5.5 --no-build-isolation
+    # flash-attn==2.5.5
+
+    # VLA / model
+    - transformers @ git+https://github.com/moojink/transformers-openvla-oft.git@bc339d9ad707454c0c115970db43c260067c61ab
+    - accelerate==1.10.0
+    - peft==0.11.1
+    - timm==0.9.10
+    - tokenizers==0.19.1
+    - safetensors==0.6.2
+    - huggingface-hub==0.34.4
+
+    # Data / TF datasets
+    - tensorflow==2.15.0
+    - tensorflow-datasets==4.9.7
+    - tensorflow-addons==0.23.0
+    - tensorflow-graphics==2021.12.3
+    - dlimp @ git+https://github.com/kvablack/dlimp.git@5edaa4691567873d495633f2708982b42edf1972
+
+    # MAPS framework
+    - draccus==0.8.0
+    - einops==0.8.1
+
+    # Simulation benchmarks
+    - mujoco==3.3.2
+    - robosuite==1.4.0
+    - gym==0.25.2
+
+    # LIBERO (install from source — see README)
+    # git clone https://github.com/Lifelong-Robot-Learning/LIBERO && pip install -e LIBERO
+
+    # Logging & utilities
+    - wandb==0.13.1
+    - rich==13.9.4
+    - imageio==2.22.0
+    - imageio-ffmpeg==0.6.0
+    - mediapy==1.2.2
+    - numpy==1.26.4
+    - scipy==1.13.1
+    - matplotlib==3.5.3
+    - opencv-python==4.6.0.66
+    - pillow==11.3.0
+    - tqdm==4.67.1
+
+    # Project (editable)
+    - -e .
