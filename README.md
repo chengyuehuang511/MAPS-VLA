@@ -25,6 +25,8 @@ Georgia Institute of Technology
 
 MAPS integrates into any VLA without additional parameters or data and achieves **up to 30% performance improvements** across LIBERO, CALVIN, SimplerEnv, and real-robot (Franka) benchmarks.
 
+> **This repository contains the first open-source OFT implementation for MiniVLA (0.5B).**
+
 <p align="center">
   <img src="figure/maps.png" alt="MAPS overview" width="800"/>
 </p>
@@ -155,7 +157,7 @@ Download pretrained model weights and place them under `pretrained_models/`:
 
 | Model | Directory | Source |
 |-------|-----------|--------|
-| MiniVLA-VQ (0.5B) | `pretrained_models/prism-qwen25-extra-dinosiglip-224px-0_5b/` | [Stanford-ILIAD/prism-qwen25-extra-dinosiglip-224px-0_5b](https://huggingface.co/Stanford-ILIAD/prism-qwen25-extra-dinosiglip-224px-0_5b) |
+| MiniVLA-OFT (0.5B) | `pretrained_models/prism-qwen25-extra-dinosiglip-224px-0_5b/` | [Stanford-ILIAD/prism-qwen25-extra-dinosiglip-224px-0_5b](https://huggingface.co/Stanford-ILIAD/prism-qwen25-extra-dinosiglip-224px-0_5b) |
 | OpenVLA-OFT (7B) | `pretrained_models/prism-dinosiglip-224px+7b/` | [TRI-ML/prismatic-vlms](https://huggingface.co/TRI-ML/prismatic-vlms) (`prism-dinosiglip-224px+7b`) |
 
 Config files for each model are already included under `pretrained_models/configs*/`.
